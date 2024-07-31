@@ -1,10 +1,10 @@
 package Week1.ECommerce;
 
 import java.util.*;
-public class Sorting{
+public class Searching{
   public ArrayList<Product> product;
 
-  public Sorting(){
+  public Searching(){
     product = new ArrayList<>();
   }
   public void addProduct(Product p) {

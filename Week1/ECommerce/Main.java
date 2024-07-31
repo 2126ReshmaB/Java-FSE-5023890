@@ -5,7 +5,7 @@ public class Main{
   public static void main(String args[]){
     Scanner sc = new Scanner(System.in);
 
-    Sorting s = new Sorting();
+    Searching s = new Searching();
 
     Product p1 = new Product(1,"table","Furniture");
     Product p2 = new Product(2,"book","Books");

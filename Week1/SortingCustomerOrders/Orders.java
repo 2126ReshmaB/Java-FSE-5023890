@@ -1,4 +1,4 @@
-package Week1.SortingCustomerOrders;
+package SortingCustomerOrders;
 
 public class Orders {
   private int orderId;

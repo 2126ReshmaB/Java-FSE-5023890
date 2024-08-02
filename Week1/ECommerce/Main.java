@@ -1,4 +1,4 @@
-package Week1.ECommerce;
+package ECommerce;
 
 import java.util.*;
 public class Main{

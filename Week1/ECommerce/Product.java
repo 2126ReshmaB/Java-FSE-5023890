@@ -1,4 +1,4 @@
-package Week1.ECommerce;
+package ECommerce;
 
 public class Product{
   private int prodId;

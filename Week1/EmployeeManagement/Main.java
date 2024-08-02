@@ -1,4 +1,4 @@
-package Week1.EmployeeManagement;
+package EmployeeManagement;
 
 import java.util.*;
 

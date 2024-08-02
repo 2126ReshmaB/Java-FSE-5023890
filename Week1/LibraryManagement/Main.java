@@ -1,4 +1,4 @@
-package Week1.LibraryManagement;
+package LibraryManagement;
 
 import java.util.*;
 class Book{

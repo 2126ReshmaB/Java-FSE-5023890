@@ -1,4 +1,4 @@
-package Week1.Financialforcasting;
+package Financialforcasting;
 
 public class Main {
   public static void main(String[] args) {

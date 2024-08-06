@@ -53,6 +53,8 @@ SELECT c.customerID, c.DOB, l.InterestRate, l.LoanID FROM customers c JOIN Loans
 
 Output:
 
+/*
+
 
 CUSTOMERID DOB	     INTERESTRATE     LOANID
 ---------- --------- ------------ ----------
@@ -73,3 +75,6 @@ CUSTOMERID DOB	     INTERESTRATE     LOANID
 	 1        15-MAY-55	     4.95	   1
 	 2        20-JUL-40	     2.97	   2
 	 3        20-JUL-00		     5	   3
+     
+
+*/

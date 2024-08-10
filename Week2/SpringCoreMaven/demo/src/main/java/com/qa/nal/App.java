@@ -13,6 +13,8 @@ public class App {
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         
         BookService bookService = (BookService) context.getBean("bookService");
-        bookService.displayService();
+
+        // Call the service method to test the dependency injection
+        bookService.performService();
     }
 }

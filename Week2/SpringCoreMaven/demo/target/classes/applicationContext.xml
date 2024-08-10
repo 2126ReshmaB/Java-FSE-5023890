@@ -4,7 +4,11 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans.xsd">
                            
-    <!-- Define your beans here -->
-    <bean id="bookService" class="com.qa.nal.Service.BookService"/>
+   
     <bean id="bookRepository" class="com.qa.nal.Repository.BookRepository"/>
+
+   
+    <bean id="bookService" class="com.qa.nal.Service.BookService">
+        <property name="bookRepository" ref="bookRepository"/>
+    </bean>
 </beans>

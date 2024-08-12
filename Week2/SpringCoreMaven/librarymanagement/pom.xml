@@ -4,11 +4,11 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.qa.nal</groupId>
-  <artifactId>demo</artifactId>
+  <groupId>com.example</groupId>
+  <artifactId>librarymanagement</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <name>demo</name>
+  <name>librarymanagement</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -25,34 +25,26 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
-   <!-- Spring Core Dependency -->
+     <!-- Spring Context -->
     <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-context</artifactId>
-      <version>5.3.21</version>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>5.3.22</version>
     </dependency>
 
-    <!-- Spring Beans Dependency -->
+    <!-- Spring AOP -->
     <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-beans</artifactId>
-      <version>5.3.21</version>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-aop</artifactId>
+        <version>5.3.22</version>
     </dependency>
 
-    <!-- Spring AOP Dependency -->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-aop</artifactId>
-            <version>5.3.29</version>
-        </dependency>
-        
-        <!-- AspectJ Weaver Dependency -->
-        <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjweaver</artifactId>
-            <version>1.9.9.1</version>
-        </dependency>
-        
+    <!-- Spring WebMVC -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-webmvc</artifactId>
+        <version>5.3.22</version>
+    </dependency>
   </dependencies>
 
   <build>

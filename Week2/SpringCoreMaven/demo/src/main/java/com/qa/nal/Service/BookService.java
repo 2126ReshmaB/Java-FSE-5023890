@@ -1,16 +1,14 @@
 package com.qa.nal.Service;
 
-import com.qa.nal.Repository.BookRepository;
 
 public class BookService {
-
-private BookRepository bookRepository;
-
-public void setBookRepository(BookRepository bookRepository) {
-    this.bookRepository = bookRepository;
-}
-public void performService() {
-    bookRepository.doSomething(); 
-}
+  public void addBook() {
+    // Simulate adding a book
+    System.out.println("Adding a book to the library...");
 }
 
+public void removeBook() {
+    // Simulate removing a book
+    System.out.println("Removing a book from the library...");
+}
+}

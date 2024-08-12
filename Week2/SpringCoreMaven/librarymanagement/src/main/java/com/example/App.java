@@ -13,12 +13,11 @@ public class App
 {
     public static void main( String[] args )
     {
-        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-
-        // Retrieve the BookService bean
-        BookService bookService = (BookService) context.getBean("bookService");
-
-        // Test the configuration by calling a method on the BookService
-        bookService.performService();
+         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        
+        BookService bookService = context.getBean(BookService.class);
+        
+        bookService.addBook("Harry Potter");
+        bookService.deleteBook("Harry Potter");
     }
 }

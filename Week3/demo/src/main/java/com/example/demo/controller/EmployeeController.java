@@ -1,8 +1,12 @@
 package com.example.demo.controller;
 
+import com.example.demo.dto.EmployeeDTO;
 import com.example.demo.entity.Employee;
+import com.example.demo.projections.EmployeeNameProjection;
 import com.example.demo.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,36 +18,21 @@ public class EmployeeController {
     @Autowired
     private EmployeeRepository employeeRepository;
 
-    @GetMapping
-    public List<Employee> getAllEmployees() {
-        return employeeRepository.findAll();
+    // Endpoint for interface-based projection
+    @GetMapping("/names")
+    public List<EmployeeNameProjection> getEmployeeNames(@RequestParam String departmentName) {
+        return employeeRepository.findByDepartmentName(departmentName);
     }
 
-    @PostMapping
-    public Employee createEmployee(@RequestBody Employee employee) {
-        return employeeRepository.save(employee);
+    // Endpoint for class-based projection
+    @GetMapping("/dto")
+    public List<EmployeeDTO> getEmployeeDTO(@RequestParam String departmentName) {
+        return employeeRepository.findEmployeeDTOByDepartmentName(departmentName);
     }
 
-    @GetMapping("/{id}")
-    public Employee getEmployeeById(@PathVariable Long id) {
-        return employeeRepository.findById(id).orElse(null);
-    }
-
-    @PutMapping("/{id}")
-    public Employee updateEmployee(@PathVariable Long id, @RequestBody Employee updatedEmployee) {
-        Employee existingEmployee = employeeRepository.findById(id).orElse(null);
-        if (existingEmployee != null) {
-            existingEmployee.setName(updatedEmployee.getName());
-            existingEmployee.setEmail(updatedEmployee.getEmail());
-            existingEmployee.setDepartment(updatedEmployee.getDepartment());
-            return employeeRepository.save(existingEmployee);
-        } else {
-            return null;
-        }
-    }
-
-    @DeleteMapping("/{id}")
-    public void deleteEmployee(@PathVariable Long id) {
-        employeeRepository.deleteById(id);
+    // Pagination and Sorting
+    @GetMapping("/paginated")
+    public Page<Employee> getEmployeesByDepartmentName(@RequestParam String departmentName, Pageable pageable) {
+        return employeeRepository.findByDepartmentName(departmentName, pageable);
     }
 }

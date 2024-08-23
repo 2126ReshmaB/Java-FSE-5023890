@@ -24,20 +24,10 @@ public class DepartmentController {
         return departmentRepository.save(department);
     }
 
-    @GetMapping("/{id}")
-    public Department getDepartmentById(@PathVariable Long id) {
-        return departmentRepository.findById(id).orElse(null);
-    }
-
     @PutMapping("/{id}")
-    public Department updateDepartment(@PathVariable Long id, @RequestBody Department updatedDepartment) {
-        Department existingDepartment = departmentRepository.findById(id).orElse(null);
-        if (existingDepartment != null) {
-            existingDepartment.setName(updatedDepartment.getName());
-            return departmentRepository.save(existingDepartment);
-        } else {
-            return null;
-        }
+    public Department updateDepartment(@PathVariable Long id, @RequestBody Department department) {
+        department.setId(id);
+        return departmentRepository.save(department);
     }
 
     @DeleteMapping("/{id}")
@@ -45,3 +35,4 @@ public class DepartmentController {
         departmentRepository.deleteById(id);
     }
 }
+

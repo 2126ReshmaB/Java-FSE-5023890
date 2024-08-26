@@ -7,14 +7,14 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "books")
-public class Book {
+@Table(name = "customers")
+public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String title;
-    private String author;
+    private String name;
+    private String email;
 
     // Getters and Setters
     public Long getId() {
@@ -25,19 +25,19 @@ public class Book {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getAuthor() {
-        return author;
+    public String getEmail() {
+        return email;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

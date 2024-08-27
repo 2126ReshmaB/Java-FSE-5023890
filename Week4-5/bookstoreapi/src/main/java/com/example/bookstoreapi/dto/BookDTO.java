@@ -47,4 +47,9 @@ public class BookDTO {
     public void setPrice(double price) {
         this.price = price;
     }
+
+    public void setVersion(int version) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setVersion'");
+    }
 }
